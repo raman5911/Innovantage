@@ -1,0 +1,66 @@
+.track-shipment .search-input {
+    text-align: center;
+}
+
+.track-shipment .search-input .col {
+    position: relative;
+    left: 14rem;
+}
+
+.track-shipment .search-input .btn {
+    position: relative;
+    top: 1rem;
+    left: -3rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.track-shipment .search-input .btn i {
+    margin-left: 0.5rem;
+}
+
+.result-not-found {
+    margin: 2rem auto;
+}
+
+.result-not-found .img-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.result-not-found .img-wrapper img {
+    height: 400px;
+    width: 450px;
+}
+
+@media (max-width: 1025px) {
+    .track-shipment .search-input .col {
+        left: 8rem;
+    }
+
+    .track-shipment .search-input .btn {
+        left: -2rem;
+    }
+
+    .result-not-found .img-wrapper img {
+        height: 300px;
+        width: 350px;
+    }    
+}
+
+@media (max-width: 769px) {
+    .track-shipment .search-input .col {
+        left: 0rem;
+    }
+
+    .track-shipment .search-input .btn {
+        left: 0rem;
+    }    
+}
+
+@media (max-width: 376px) {
+    .result-not-found .img-wrapper img {
+        height: 170px;
+        width: 220px;
+    }
+}

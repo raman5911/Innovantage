@@ -1,38 +1,1007 @@
-.App {
-  text-align: center;
+* {
+    font-family: "Open Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+	margin: 3rem 3rem 2.5rem 3rem;
+	font-family: "Antic Didone", serif !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3,
+h4,
+h5 {
+	font-family: "Merriweather", serif !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Scroll Button */
+#top-scroll {
+	position: fixed;
+	bottom: 1rem;
+	left: 0.5rem;
+	z-index: 99;
+	cursor: pointer;
+	font-size: 2rem;
+	color: #fff;
+	border: none;
+	background-color: #536dfe;
+	height: 55px;
+	width: 55px;
+	border-radius: 50%;
+	outline: none;
+	transition: all 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+#top-scroll:hover {
+	background-color: #fe526c;
+	color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#top-scroll i {
+	margin-bottom: 1rem;
+}
+
+/* --------- Header --------- */
+
+.slider {
+    height: 85vh;
+    background-color: black;
+}
+
+.slider img {
+    transform: translateY(-15%);
+    opacity: 0.5;
+}
+
+.slider .content {
+    position: absolute;
+    top: 6.5rem;
+    width: 60%;
+    text-align: left;
+}
+
+.slider-2 .content {
+    left: 20rem;
+    top: 7.5rem;
+    text-align: center;
+}
+
+.slider-3 .content {
+    left: 50rem;
+    width: 35%;
+}
+
+.slider .content h2 {
+    font-family: "Antic Didone", serif !important;
+    font-weight: bold;
+}
+
+.slider .content p {
+    margin: 1rem auto;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.content .btn {
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    background-color: #536dfe;
+    color: #fff;
+    font-weight: bold;
+    margin: 1rem auto;
+    transition: all 0.4s;
+}
+
+.content .btn i {
+	margin-top: 0.3rem;
+	margin-left: 0.2rem;
+	transition: all 0.3s;
+}
+
+.content .btn:hover {
+	color: #fff;
+	background-color: #fe526c;
+	box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.411);
+	transform: scale(1.07);
+}
+
+.content .btn:hover i {
+	margin-left: 0.5rem;
+}
+
+.content .sec-btn {
+	border: 1px solid #fff;
+	border-radius: 50px;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 1rem 2rem;
+    margin: 1rem;
+	transition: all 0.4s;
+	outline: none;
+}
+
+.content .sec-btn:hover {
+	background-color: #fff;
+	color: #536dfe;
+	transform: scale(1.07);
+}
+
+/* --------- Header --------- */
+
+/* --------- Main Section --------- */
+
+.main {
+    /* height: 100vh; */
+}
+
+.main .container {
+    margin: 2rem 2rem 1rem 2rem;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.main .intro img {
+    height: 530px;
+    width: 530px;
+    margin-left: 2rem;
+}
+
+.main .intro2 img {
+    height: 400px;
+    width: 400px;
+    margin-left: 15rem;
+}
+
+.main .intro p, .main .intro2 p {
+    margin-left: 3rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    word-spacing: 0.25rem;
+}
+
+/* --------------Review Section---------- */
+
+#review {
+	padding: 2rem;
+}
+
+#review h1 {
+	margin: auto;
+}
+
+#review ul {
+	margin: 2rem;
+}
+
+#review ul li {
+	margin: 1rem;
+}
+
+#review ul li i {
+	color: #ffd900;
+}
+
+#review .img-container {
+	text-align: center;
+}
+
+#review .review-img {
+	height: 300px;
+	width: 380px;
+}
+
+#review .row {
+	margin-bottom: 1.5rem;
+}
+
+/* --------------Services section--------------- */
+
+#services {
+	/* color: #fff; */
+	/* background-image: linear-gradient(rgba(0, 102, 255, 0.3),
+			rgba(0, 102, 255, 0.3)),
+		url("/src/assets/images/"); */
+	/* background-image: linear-gradient(rgba(10, 25, 41, 0.4), rgba(10, 25, 41, 0.4)), url("/src/assets/images/globe-background.jpg"); */
+
+    background-image: linear-gradient(rgba(256, 256, 256, 0.2), rgba(256, 256, 256, 0.2)), url("https://img.freepik.com/free-photo/white-paper-texture_1409-1346.jpg?t=st=1647275811~exp=1647276411~hmac=eacefb5bbb4ff89919174b6d7160671b5e7f24d7ff246c739db06647a02efd46&w=1060");
+}
+
+#services span.icon-wrapper {
+	display: flex;
+	margin: 1rem;
+	padding: 1rem;
+    border: 1px solid #00aeff;
+	border-radius: 0.7rem;
+	/* box-shadow: -2px -2px 20px 1px #7689b1 inset; */
+	/* background-color: #fff; */
+	/* color: #000; */
+	transition: all 0.3s;
+}
+
+#services span.icon-wrapper:hover {
+	background-color: #00aeff;
+	color: #fff;
+	/* box-shadow: 1px 1px 5px 5px rgba(256, 256, 256, 0.5); */
+	transform: translateY(-7%);
+}
+
+#services .icon-content {
+	width: 70%;
+}
+
+.icon-div {
+	margin: 2.1rem;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+.icon-div i {
+    color: #00aeff;
+}
+
+#services span .icon-content h5 {
+	color: #00aeff;
+}
+
+#services span:hover .icon-content h5, #services span:hover i {
+	color: #fff;
+}
+
+#services h3 {
+	text-align: center;
+	margin: 2rem auto;
+	/* color: #fe526c; */
+}
+
+.grid {
+	text-align: center;
+}
+
+#services {
+    padding: 3rem;
+}
+
+#services .carousel {
+    height: 450px;
+    width: 750px !important;
+    background-color: #0a1929;
+    transform: translateX(25%);
+    margin: 2.5rem;
+    padding: 0;
+}
+
+#services .carousel img {
+    height: 450px;
+    width: 750px !important;
+    opacity: 0.8;
+    /* transform: translateX(-2%); */
+}
+
+#services .carousel span {
+    background-color: transparent !important;
+    box-shadow: none;
+    width: 800px !important;
+}
+
+.value-added .row div {
+	display: flex;
+}
+
+.value-added .row div i {
+	margin-right: 1rem;
+	margin-top: 0.2rem;
+	color: #ffd900;
+}
+
+.contact-banner {
+    height: 300px;
+    background-color: #00aeff;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.contact-banner h1, .contact-banner p {
+    margin: 1rem auto;
+}
+
+.contact-banner h1 i {
+    margin-right: 0.5rem;
+}
+
+.contact-banner p {
+    font-size: 18px;
+}
+
+.contact-banner .btn {
+    background-color: #fe526c;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 1rem;
+    width: 15%;
+    transform: translateX(275%);
+    margin: 1rem;
+}
+
+.contact-banner .btn:hover {
+    box-shadow: 10px 10px 5px 0px #0000002d;
+}
+
+.contact-banner .btn i {
+    margin-left: 0.5rem;
+}
+
+/* ----------------Footer---------------- */
+
+footer {
+	background-color: #0a1929;
+	color: #fff;
+	padding: 1rem;
+    padding-top: 4rem;
+}
+
+footer h4 {
+	color: #00aeff;
+}
+
+ul {
+	/* margin-left: 0.3rem; */
+	padding: 0%;
+}
+
+li {
+	list-style: none;
+	margin-top: 0.7rem;
+	/* margin-left: 1.3rem; */
+    margin-left: 0.7rem;
+}
+
+footer ul li span i {
+	position: relative;
+	left: 3rem;
+	bottom: 0.4rem;
+}
+
+footer span {
+	display: flex;
+	margin-top: 0.7rem;
+}
+
+footer span p {
+	margin: auto 1rem;
+}
+
+footer a {
+    color: #00aeff !important;
+}
+
+footer .contact span i {
+	margin-top: 0.4rem;
+	font-size: 1.1rem;
+}
+
+footer .contact a {
+	color: #fff;
+	padding: 0.3rem;
+}
+
+footer .contact a:hover i {
+	color: #fff;
+}
+
+footer .social {
+	margin: 0.5rem;
+	font-size: 1.4rem;
+	color: #00aeff;
+}
+
+.copyright-section {
+	text-align: center;
+	border-top: 1px solid rgb(168, 168, 168);
+	padding-top: 0.3rem;
+	margin: 0px;
+}
+
+#year {
+	display: inline;
+}
+
+.copyright-section .dev-name a {
+	color: #fe526c !important;
+	text-decoration: underline;
+}
+
+.copyright-section .credit {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.copyright-section .credit a {
+	color: rgba(255, 255, 255, 0.5) !important;
+	text-decoration: underline;
+	margin: auto 0.3rem;
+}
+
+/* --------- Main Section --------- */
+
+/* --------- About Us Page --------- */
+
+.about-us {
+    margin-bottom: 4rem;
+}
+
+.about-us header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/images/A_Building_s_Photograph.jpeg");
+    height: 50vh;
+    transform: translateY(-15%);
+    overflow: hidden;
+}
+
+.about-us header h1 {
+    color: #fff;
+    position: relative;
+    left: 40rem;
+    top: 10rem;
+}
+
+.about-us h1, .about-us h4 {
+    margin: 1rem auto 1rem auto;
+}
+
+.about-us p {
+	line-height: 1.9;
+	/* word-spacing: 0.2rem; */
+	padding: 0.4rem;
+	font-size: 17px;
+	color: #252525;
+    width: 90%;
+}
+
+.about-us div {
+    margin: 1.5rem auto 1.5rem auto;
+}
+
+#team h1 {
+	margin-left: auto;
+}
+
+#team .member-card {
+	text-align: center;
+}
+
+#team .member-card img {
+	height: 14rem;
+	margin-bottom: 1.5rem;
+    border-radius: 50%;
+}
+
+#team .member-card p {
+	color: #536dfe;
+}
+
+/* --------- About Us Page --------- */
+
+/* --------- Get a Qoute Page --------- */
+
+.get-a-qoute header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/images/money.jpeg");
+    height: 50vh;
+    transform: translateY(-15%);
+    overflow: hidden;
+    color: #fff;
+}
+
+.get-a-qoute header .content {
+    position: relative;
+    left: 40rem;
+    top: 7rem;
+}
+
+.get-a-qoute header .content p {
+    margin-top: -1rem;
+    margin-left: -2.5rem;
+    font-size: 18px;
+}
+
+.get-a-qoute section h1 {
+    margin-top: 0rem;
+}
+
+.list-group {
+    width: 50%;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.list-group-item {
+    padding: 1rem;
+    color: #0066ff;
+    font-weight: 600;
+}
+
+.list-group-item i {
+    visibility: hidden;
+    position: absolute;
+    right: 1rem;
+    margin-top: 0.2rem;
+}
+
+.list-group-item:hover {
+    background-color: #e9f2ff;
+    color: #0066ff;
+}
+
+.list-group-item:hover i {
+    visibility: visible;
+}
+
+/* --------- Get a Qoute Page --------- */
+
+/* --------- Track Your Shipment Page --------- */
+
+.track-shipment {
+    margin-bottom: 1rem;
+    min-height: 700px;
+}
+
+.track-shipment header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/images/delivery.jpg");
+    height: 55vh;
+    transform: translateY(-15%);
+    background-position: 45% 14%;
+    overflow: hidden;
+    color: #fff;    
+}
+
+.track-shipment header h1 {
+    color: #fff;
+    position: relative;
+    left: 32rem;
+    top: 10rem;
+}
+
+/* --------- Track Your Shipment Page --------- */
+
+/* --------- Contact Page --------- */
+
+.contact-us {
+    margin-top: -2rem;
+    overflow: hidden;
+}
+
+.contact-us img {
+    height: 500px;
+    width: 500px;
+}
+
+.contact-us .info {
+    margin-top: 5rem;
+    margin-left: 2rem;
+}
+
+.contact-us .info h1 {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.contact-us .info span {
+	font-size: initial;
+	display: flex;
+	font-weight: normal;
+}
+
+.contact-us .info span i {
+	font-size: 1.4rem;
+	margin-right: 1rem;
+	margin-top: 0.3rem;
+	color: #fe526c;
+}
+
+.contact-us .info .social-icons {
+    margin-bottom: 0;
+}
+
+.contact-us .info .social-icons .social {
+	margin: 0.3rem;
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	transition: all 0.5s;
+}
+
+.contact-us .info .social-icons .social:hover {
+	background-color: #007bff;
+	color: #fff;
+	border-radius: 50%;
+}
+
+.contact-us section iframe {
+    height: 50vh;
+    width: 99vw;
+    margin-top: -4.5rem;
+}
+
+/* --------- Contact Page --------- */
+
+/* --------- Careers Page --------- */
+
+.career {
+    margin-bottom: 3rem;
+}
+
+.career header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../src/assets/images/career.jpg");
+    height: 55vh;
+    transform: translateY(-15%);
+    background-position: 0% 27%;
+    background-size: cover;
+    overflow: hidden;
+    color: #fff;    
+}
+
+.career h1 {
+ margin-left: auto;
+ margin-bottom: 1rem;   
+}
+
+.career header h1 {
+    color: #fff;
+    position: relative;
+    left: 37rem;
+    top: 9.5rem;
+}
+
+.career p {
+    width: 90%;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.career .empty  {
+    text-align: center;
+}
+
+.career .empty img {
+    height: 400px;
+    width: 500px;
+}
+
+.career .empty p {
+    margin-left: 4rem;
+    font-size: 17px;
+}
+
+.career .card {
+    width: 60%;
+    padding: 1rem 2rem;
+    margin: 1rem;
+}
+
+.career .card p {
+    margin-bottom: auto;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+.career .card p i {
+    margin-right: 0.5rem;
+}
+
+.career .card a {
+    background-color: #536dfe;
+    color: #fff;
+    /* padding: 1rem; */
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* --------- Careers Page --------- */
+
+/* --------- Page Not Found --------- */
+
+.page-not-found {
+    text-align: center;
+}
+
+.page-not-found  h1 {
+	font-family: "Merriweather", serif !important;
+    /* font-weight: 500;     */
+}
+
+.page-not-found img {
+    height: 500px;
+    width: 800px;
+}
+
+/* --------- Page Not Found --------- */
+
+/* Media Queries */
+@media (max-width: 1024px) {
+
+    .loader {
+        left: 28rem;
+    }
+
+    .main .container {
+        margin: 1rem 1rem 0.5rem 1rem;
+        padding: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .main .intro img {
+        height: 430px;
+        width: 430px;
+        margin-left: 1rem;
+    }
+
+    .main .intro2 img {
+        margin-left: 3rem;
+    }
+
+    .slider {
+        height: auto;
+    }
+
+    .slider-2 .content {
+        left: 13rem;
+    }
+
+    .slider-3 .content {
+        left: 34rem;
+    }
+
+    #services span.icon-wrapper {
+        flex-direction: column;
+    }
+
+    .icon-div {
+        text-align: center;
+    }
+
+    #services .icon-content {
+        width: auto;
+    }
+    
+    #services .icon-content h5 {
+        text-align: center;
+    }
+
+    #services .icon-content p {
+        margin-left: 1.5rem;
+    }
+
+    #services .carousel {
+        height: 350px;
+        width: 650px !important;
+        transform: translateX(15%);
+    }
+
+    #services .carousel img {
+        height: 350px;
+        width: 650px !important;        
+    }
+
+    .about-us header h1 {
+        left: 25rem;
+    }
+
+    .get-a-qoute header .content {
+        left: 22rem;
+    }
+
+    .track-shipment header h1 {
+        left: 20rem;
+    }
+
+    .contact-us section iframe {
+        margin-top: 1rem;
+    }
+
+    .career header h1 {
+        left: 25rem;
+    }
+}
+
+@media (max-width: 769px) {
+
+    .loader {
+        left: 19rem;
+    }
+
+    .main .container {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .slider {
+        height: auto;
+    }
+
+    .slider img {
+        transform: translateY(0%);
+    }
+
+    .slider-1 .content {
+        top: 4rem;
+    }
+
+    .slider-2 .content {
+        left: 10rem;
+    }
+
+    .slider-3 .content {
+        left: 22rem;
+        width: 45%;
+    }
+
+    #services .carousel {
+        height: 250px;
+        width: 550px !important;
+        transform: translateX(0%);
+    }
+
+    #services .carousel img {
+        height: 250px;
+        width: 550px !important;        
+    }
+    
+    .contact-banner .btn {
+        width: 30%;
+        transform: translateX(110%);
+    }
+
+    .about-us header h1 {
+        left: 18rem;
+        top: 8rem;
+    }
+
+    .get-a-qoute header .content {
+        left: 16rem;
+        top: 5rem;
+    }
+    
+    .track-shipment header h1 {
+        left: 12rem;
+        top: 8rem;
+    }
+    
+    .contact-us .info {
+        margin-top: -3.5rem;
+    }
+
+    .contact-us section iframe {
+        margin-top: 1rem;
+    }
+
+    .career header h1 {
+        left: 18rem;
+        top: 8rem;
+    }
+
+    .career .card a {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 377px) {
+
+    .loader {
+        left: 6rem;
+    }
+
+    h1 {
+        margin: 1rem;
+    }
+
+    .main .container {
+        margin: auto;
+        padding: auto;
+    }
+
+    .main .intro img {
+        height: 270px;
+        width: 270px;
+        margin-left: auto;
+    }
+    
+    .main .intro2 img {
+        height: 250px;
+        width: 250px;
+        position: "initial";
+        margin-left: 1rem;
+    }
+
+    .slider {
+        height: 50vh;
+        display: none !important;
+    }
+
+    .slider .content {
+        width: 85%;
+        left: 2rem;
+        top: 0;
+    }
+
+    .slider .content p {
+        height: 70px;
+        overflow: scroll;
+        margin: auto;
+    }
+
+    #services .carousel {
+        height: 250px;
+        width: 300px !important;
+        transform: translateX(0%);
+        margin: auto;
+    }
+
+    #services .carousel img {
+        height: 250px;
+        width: 550px !important;        
+    }
+
+    #review .review-img {
+        height: 200px;
+        width: 250px;
+    }
+    
+    .contact-banner .btn {
+        width: 50%;
+        transform: translateX(40%);
+    }
+    
+    footer .row div {
+        margin: 1rem;
+    }
+
+    .about-us header h1 {
+        left: 8rem;
+    }
+
+    .get-a-qoute header .content {
+        left: 6rem;
+    }
+    
+    .get-a-qoute header .content p {
+        margin-top: auto;
+        width: 80%;
+    }
+
+    .list-group {
+        width: auto;
+        margin-left: auto;
+    }
+
+    .track-shipment header h1 {
+        left: 3rem;
+        top: 8rem;
+    } 
+    
+    .contact-us img {
+        height: 300px;
+        width: 300px;
+    }
+
+    .career header h1 {
+        left: 8rem;
+        top: 8rem;
+    }
+
+    .career .empty img {
+        height: 200px;
+        width: 250px;
+    }
+
+    .career .empty p {
+        margin-left: auto;
+    }
+
+    .career .card {
+        padding: 1rem;
+        width: auto;
+    }
+
+    .page-not-found img {
+        height: 300px;
+        width: 300px;
+    }
 }

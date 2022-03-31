@@ -1,0 +1,130 @@
+.nav {
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.logo-wrapper {
+    display: flex;
+}
+
+.logo-content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-content-wrapper p {
+    margin: 0;
+    margin-top: 0.45rem;
+    line-height: 1.2;
+}
+
+.logo-content-wrapper .company-name {
+    font-size: 1.5rem;
+    /* font-weight: 600; */
+}
+
+.logo-content-wrapper .tagline {
+    font-size: 1rem;
+    color: #0432ff;
+    font-weight: 600;
+}
+
+.nav-links {
+    position: absolute;
+    right: 5rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: rgba(0,0,0,.55);;
+    display: inline-block !important;
+    margin-left: 1.7rem;
+    margin-top: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.4s;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #0432ff !important;
+}
+
+.nav-item::before {
+    content: '';
+    padding-top: 1rem;
+}
+
+.nav-item::after {
+    display: block !important;
+    content: '';
+    border-bottom: 2px solid #0432ff;
+    padding-bottom: 1rem;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-item.active {
+    border-bottom: 2px solid #0432ff;
+}
+
+.dropdown {
+    margin-left: 1.8rem;
+}
+
+.dropdown:focus {
+    border: none !important;
+    outline: none !important;    
+}
+
+.dropdown-btn {
+    margin-left: "1.2rem"
+}
+
+@media (max-width: 1025px) {
+    .logo-div {
+        transform: translateX(-10%);
+    }
+
+    .logo-content-wrapper p {
+        margin: 0;
+        margin-top: 0.6rem;
+        line-height: 1.2;
+    }
+    
+    .logo-content-wrapper .company-name {
+        font-size: 1.2rem;
+    }
+    
+    .logo-content-wrapper .tagline {
+        font-size: 0.8rem;
+        color: #0432ff;
+        font-weight: 600;
+    }
+
+    .nav-links {
+        right: 0.5rem;
+    }
+
+    .nav-item {
+        margin-left: 0.45rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 769px) {
+    .nav-links {
+        position: initial;
+    }
+
+    .dropdown {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo-div {
+        transform: translateX(0%);
+    }
+}

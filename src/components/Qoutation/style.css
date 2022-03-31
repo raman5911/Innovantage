@@ -1,0 +1,97 @@
+.form-page .heading {
+    text-align: center;
+}
+
+.form-page .heading h1 {
+    margin-bottom: 1rem;
+}
+
+.form-page h4 {
+    color: #0d6efd;
+    margin: 1rem auto;
+}
+
+.form {
+    margin: 2rem;
+}
+
+.form .group {
+    margin: 1.5rem auto;
+}
+
+.toast {
+    background-color: red;
+    color: #fff;
+    border: 0;
+    position: relative;
+    left: 68rem;
+    top: 1rem;
+}
+
+.submission-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 89vh;
+    padding: 1rem;
+    font-size: 17px;
+}
+
+.submission-status .img-box,
+.submission-status h1,
+.link-box {
+    text-align: center;
+}
+
+.submission-status p {
+    margin: 0.5rem;
+}
+
+.submission-status .btn {
+    width: 15%;
+    padding: 0.5rem 0.3rem;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+.submission-status .btn:hover {
+    color: #fff;
+}
+
+@media (max-width: 1025px) {
+    .toast {
+        left: 42rem;
+    }
+}
+
+@media (max-width: 769px) {
+    .toast {
+        left: 25rem;
+    }
+
+    .submission-status {
+        height: auto;
+    }
+
+    .submission-status .img-box {
+        text-align: left;
+    }
+
+    .submission-status img {
+        transform: scale(0.65);
+    }
+
+    .submission-status .btn {
+        width: auto;
+    }    
+}
+
+@media (max-width: 376px) {
+    .toast {
+        left: 1rem;
+        margin-bottom: 2rem;
+    }
+}
