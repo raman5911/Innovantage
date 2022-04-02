@@ -25,10 +25,10 @@ function Career() {
                 <Col xl={10} lg={10}>
                   <p>
                     <i class="fas fa-map-marker-alt"></i>{" "}
-                    {jobOpenings[0].location}
+                    Location :- {jobOpenings[0].location}
                   </p>
                   <p>
-                    <i class="fas fa-clock"></i> {jobOpenings[0].experience}
+                    <i class="fas fa-clock"></i> Experience :- {jobOpenings[0].experience}
                   </p>
                 </Col>
                 <Col xl={2} lg={2}>

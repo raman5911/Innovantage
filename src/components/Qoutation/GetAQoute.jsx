@@ -17,6 +17,17 @@ function GetAQoute() {
 
       <section>
         <Container>
+
+          <div style={{
+            textAlign: "center",
+            fontSize: "22px",
+            fontWeight: "bold",
+            marginBottom: "2rem",
+            padding: "0.5rem",
+            color: "#856404",
+            backgroundColor: "#fff3cd"
+          }}>Website is under maintainance. In the meantime, you can send us all your queires at sales@innovantage.in, contact@innovantage.in</div>
+
           <h1>Choose Your Service</h1>
 
           <ListGroup className="list-group">

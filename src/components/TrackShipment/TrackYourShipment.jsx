@@ -25,6 +25,17 @@ function TrackYourShipment() {
 
       <section className="search-input">
         <Container>
+
+        <div style={{
+            textAlign: "center",
+            fontSize: "22px",
+            fontWeight: "bold",
+            marginBottom: "2rem",
+            padding: "0.5rem",
+            color: "#856404",
+            backgroundColor: "#fff3cd"
+          }}>Website is under maintainance. In the meantime, you can send us all your queires at sales@innovantage.in, contact@innovantage.in</div>
+
           <Row>
             <Col xl={6} lg={6} md={12} sm={12} className="col">
               <InputField
