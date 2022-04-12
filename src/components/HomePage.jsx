@@ -34,9 +34,9 @@ function HomePage() {
               <Col xl={6} lg={6} md={12} sm={12}>
                 <img src={animation} alt="animation" />
               </Col>
-              <Col xl={6} lg={6} md={12} sm={12}>
-                <h1>Better logistics solutions for you</h1>
-                <p data-aos="fade-up">
+              <Col xl={6} lg={6} md={12} sm={12} style={{ position: "relative", top: "-0.7rem" }}>
+                <h1>Customized & Integrated Supply Chain Solutions for you</h1>
+                <p data-aos="fade-up" style={{ position: "relative", top: "-1.3rem" }}>
                   Do you find it difficult to manage the supply chain for your
                   business ? Don't worry, Get hassle free and reliable logistics
                   solutions for your business. Our mission is to cater every
