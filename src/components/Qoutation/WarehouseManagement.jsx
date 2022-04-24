@@ -26,6 +26,7 @@ function WarehouseManagement() {
     infraReq: "",
     manpowerReq: "",
     securityReq: "",
+    otherReq: "",
     fileUpload: "",
   });
 
@@ -47,17 +48,42 @@ function WarehouseManagement() {
       return;
     }
 
-    axios({
-      method: "post",
-      url: "https://jsonplaceholder.typicode.com/users",
-      data: inputValue,
-    })
+    const url = `${process.env.REACT_APP_API_URL}/qoutation-forms/new`;
+    const data = {
+      type: "warehouse",
+      userName: inputValue.name,
+      userAddress: inputValue.address,
+      userPhone: inputValue.phone,
+      userPhoneFormatted: inputValue.formattedPhone,
+      userEmail: inputValue.email,
+      warehouseCity: inputValue.warehouseCity,
+      specificLocation: inputValue.specificLocation,
+      coveredArea: inputValue.coveredArea,
+      openArea: inputValue.openArea,
+      commodityStorage: inputValue.commodityStorage,
+      infraOptions: inputValue.infraReq,
+      manpowOptions: inputValue.manpowerReq,
+      securityOptions: inputValue.securityReq,
+      otherReq: inputValue.otherReq,
+      file: inputValue.fileUpload,
+    };
+
+    // creating new form instance
+    const formData = new FormData();
+
+    // appending data in form
+    for (var key in data) {
+      formData.append(`${key}`, data[key]);
+    }
+
+    axios
+      .post(url, formData)
       .then((response) => {
-        console.log(response);
-        window.location.href = "/get-a-qoute/submission-successfull";
+        if (response.status === 200)
+          window.location.href = "/get-a-qoute/submission-successfull";
+        else window.location.href = "/get-a-qoute/submission-failed";
       })
       .catch((error) => {
-        console.log(error);
         window.location.href = "/get-a-qoute/submission-failed";
       });
   }
@@ -179,9 +205,6 @@ function WarehouseManagement() {
                 handleInputChange={handleInputChange}
               />
             </Col>
-          </Row>
-
-          <Row>
             <Col xl={6} lg={6} md={12} sm={12}>
               <InputField
                 label="Infrastructure Requirement  (Select Yes / No)"
@@ -192,6 +215,9 @@ function WarehouseManagement() {
                 selectOptions={["Yes", "No"]}
               />
             </Col>
+          </Row>
+
+          <Row>
             <Col xl={6} lg={6} md={12} sm={12}>
               <InputField
                 label="Manpower Requirement  (Select Yes / No)"
@@ -202,9 +228,6 @@ function WarehouseManagement() {
                 selectOptions={["Yes", "No"]}
               />
             </Col>
-          </Row>
-
-          <Row>
             <Col xl={6} lg={6} md={12} sm={12}>
               <InputField
                 label="Security Personnel / CCTV Requirement  (Select Yes / No)"
@@ -215,8 +238,23 @@ function WarehouseManagement() {
                 selectOptions={["Yes", "No"]}
               />
             </Col>
+          </Row>
+
+          <Row>
             <Col xl={6} lg={6} md={12} sm={12}>
-              <InputField type="file" name="fileUpload" handleInputChange={handleInputChange} />              
+              <InputField
+                label="Other Requirements"
+                type="text"
+                name="otherReq"
+                handleInputChange={handleInputChange}
+              />
+            </Col>
+            <Col xl={6} lg={6} md={12} sm={12}>
+              <InputField
+                type="file"
+                name="fileUpload"
+                handleInputChange={handleInputChange}
+              />
             </Col>
           </Row>
 

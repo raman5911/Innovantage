@@ -64,17 +64,56 @@ function CustomClearance() {
       return;
     }
 
-    axios({
-      method: "post",
-      url: "https://jsonplaceholder.typicode.com/users",
-      data: inputValue,
-    })
+    const url = `${process.env.REACT_APP_API_URL}/qoutation-forms/new`;
+    const data = {
+      type: "custom",
+      userName: inputValue.name,
+      userAddress: inputValue.address,
+      userPhone: inputValue.phone,
+      userPhoneFormatted: inputValue.formattedPhone,
+      userEmail: inputValue.email,
+      shipmentType: inputValue.shipmentType,
+      pickupAddress: inputValue.pickupAddress,
+      areaCode: inputValue.areaCode,
+      pickupPhone: inputValue.shipmentPhone,
+      pickupPhoneFormatted: inputValue.formattedShipmentPhone,
+      pickupFromCountryCode: inputValue.shipmentFrom,
+      pickupFromCountryName: inputValue.shipmentFromCountry,
+      originPort: inputValue.originPort,
+      dropToCountryCode: inputValue.shipmentTo,      
+      dropToCountryName: inputValue.shipmentToCountry,
+      destinationPort: inputValue.destinationPort,
+      shipmentMode: inputValue.modeOfShipment,
+      commodityName: inputValue.commodityName,
+      commodityType: inputValue.commodityType,
+      containerType: inputValue.containerType,
+      grossWeight: inputValue.grossWeight,
+      numOfPkg: inputValue.numOfPackages,
+      totalVolume: inputValue.totalVolume,
+      numOfShip: inputValue.shipmentPerMonth,
+      file: inputValue.fileUpload
+    };
+
+    // creating new form instance
+    const formData = new FormData();
+    
+    // appending data in form
+    for(var key in data) {
+      formData.append(`${key}`, data[key]);
+    }
+
+    axios.post(
+      url,
+      formData
+    )
       .then((response) => {
-        console.log(response);
-        window.location.href = '/get-a-qoute/submission-successfull';
+        if(response.status === 200)
+          window.location.href = '/get-a-qoute/submission-successfull';
+
+        else
+          window.location.href = '/get-a-qoute/submission-failed';
       })
       .catch((error) => {
-        console.log(error);
         window.location.href = '/get-a-qoute/submission-failed';
       });
   }

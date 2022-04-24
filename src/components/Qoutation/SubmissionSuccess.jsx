@@ -31,7 +31,7 @@ function SubmissionSuccess() {
         <p>
           We will reach out to you within 2-3 business days. In the meantime, if
           you have any query, ask us at{" "}
-          <a href="mailto:contact@innovantage.in">contact@innovantage.in</a> and
+          <a href="mailto:contact@innovantage.in">sales@innovantage.in</a> and
           for the reference, also mention the order id from the confirmation
           email sent to you.
         </p>

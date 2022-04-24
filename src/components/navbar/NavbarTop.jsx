@@ -19,7 +19,7 @@ function NavbarTop() {
             <img src={logo} alt="logo" height="80" width="80" />
             <div className="logo-content-wrapper">
               <p className="company-name">Innovantage</p>
-              <p className="tagline">"Integrating Supply Chain Solutions..."</p>
+              <p className="tagline">"Integrating Supply Chain Solutions......."</p>
             </div>
           </div>
         </Navbar.Brand>

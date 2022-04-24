@@ -40,18 +40,39 @@ function ValueAddedServices() {
       return;
     }
 
-    axios({
-      method: "post",
-      url: "https://jsonplaceholder.typicode.com/users",
-      data: inputValue,
-    })
+    const url = `${process.env.REACT_APP_API_URL}/qoutation-forms/new`;
+    const data = {
+      type: "value",
+      userName: inputValue.name,
+      userAddress: inputValue.address,
+      userPhone: inputValue.phone,
+      userPhoneFormatted: inputValue.formattedPhone,
+      userEmail: inputValue.email,
+      serviceType: inputValue.serviceType,
+      file: inputValue.fileUpload
+    };
+
+    // creating new form instance
+    const formData = new FormData();
+    
+    // appending data in form
+    for(var key in data) {
+      formData.append(`${key}`, data[key]);
+    }
+
+    axios.post(
+      url,
+      formData
+    )
       .then((response) => {
-        console.log(response);
-        window.location.href = "/get-a-qoute/submission-successfull";
+        if(response.status === 200)
+          window.location.href = '/get-a-qoute/submission-successfull';
+
+        else
+          window.location.href = '/get-a-qoute/submission-failed';
       })
       .catch((error) => {
-        console.log(error);
-        window.location.href = "/get-a-qoute/submission-failed";
+        window.location.href = '/get-a-qoute/submission-failed';
       });
   }
 

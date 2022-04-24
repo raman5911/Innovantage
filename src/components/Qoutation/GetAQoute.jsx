@@ -18,7 +18,7 @@ function GetAQoute() {
       <section>
         <Container>
 
-          <div style={{
+          {/* <div style={{
             textAlign: "center",
             fontSize: "22px",
             fontWeight: "bold",
@@ -26,7 +26,7 @@ function GetAQoute() {
             padding: "0.5rem",
             color: "#856404",
             backgroundColor: "#fff3cd"
-          }}>Website is under maintainance. In the meantime, you can send us all your queires at sales@innovantage.in, contact@innovantage.in</div>
+          }}>Website is under maintainance. In the meantime, you can send us all your queires at sales@innovantage.in, contact@innovantage.in</div> */}
 
           <h1>Choose Your Service</h1>
 
