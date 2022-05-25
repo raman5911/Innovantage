@@ -1,44 +1,56 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import SetDocTitle from "../utils/SetDocTitle";
 
 import { Container, Card, Row, Col } from "react-bootstrap";
+import { get, format_date } from "../utils/index";
 
 import NoJobs from "../assets/images/empty_jobs.png";
 
 function Career() {
-  const [jobOpenings, setJobOpenings] = useState([
-    {
-      jobTitle: "Business Development Manager for Logistics Services",
-      location: "New Delhi",
-      experience: "5-6 Years",
-      jobLink: 'https://www.linkedin.com/jobs/view/2976108090/'
-    }
-  ]);
+  const [jobOpenings, setJobOpenings] = useState([]);
+
+  useEffect(async () => {
+    const result = await get('career-jobs/all');
+    console.log(result.data.data);
+    setJobOpenings(result.data.data)
+  }, []);
 
   function RenderJobOpenings() {
-    return (
+    return jobOpenings.map((job, index) => {
+      return (
         <Card className="card" data-aos="zoom-in">
           <Card.Body>
-            <Card.Title>{jobOpenings[0].jobTitle}</Card.Title>
+            <Card.Title>{job.position}</Card.Title>
             <Card.Text>
               <Row>
                 <Col xl={10} lg={10}>
                   <p>
-                    <i class="fas fa-map-marker-alt"></i>{" "}
-                    Location :- {jobOpenings[0].location}
+                    <i class="fas fa-map-marker-alt"></i> Location :-{" "}
+                    {job.location}
                   </p>
                   <p>
-                    <i class="fas fa-clock"></i> Experience :- {jobOpenings[0].experience}
+                  <i class="fas fa-suitcase"></i> Experience :-{" "}
+                    {job.experience_min} - {job.experience_max} years
+                  </p>
+                  <p>
+                  <i class="fas fa-clock"></i> Application Deadline :- {format_date(job.application_deadline, "Asia/Kolkata", "dd-MMMM-yyyy")}
                   </p>
                 </Col>
                 <Col xl={2} lg={2}>
-                  <a className="btn" target="_blank" href={`${jobOpenings[0].jobLink}`}>Apply</a>
+                  <a
+                    className="btn"
+                    target="_blank"
+                    href={`${job.post_link}`}
+                  >
+                    Apply
+                  </a>
                 </Col>
               </Row>
             </Card.Text>
           </Card.Body>
         </Card>
-    );
+      );
+    });
   }
 
   return (

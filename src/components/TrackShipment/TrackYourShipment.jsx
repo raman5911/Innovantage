@@ -2,11 +2,14 @@ import { React, useState } from "react";
 import SetDocTitle from "../../utils/SetDocTitle";
 
 import InputField from "../Qoutation/FormBuilder/InputField";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Button, Container, Row, Col, Spinner } from "react-bootstrap";
 
 import "./style.css";
 
 import ResultNotFound from "./ResultNotFound";
+import ErrorInFetching from "./ErrorInFetching";
+
+import axios from "axios";
 
 function TrackYourShipment() {
   const [trackId, setTrackId] = useState("");
@@ -14,6 +17,32 @@ function TrackYourShipment() {
   function handleInputChange(name, value) {
     setTrackId(value);
   }
+
+  const [loading, setLoading] = useState(false);
+  const [responseStatus, setResponseStatus] = useState('');
+
+  const handleSubmit = () => {
+    setLoading(true);
+
+    axios.get(`${process.env.REACT_APP_API_URL}/track-shipment?orderId=${trackId}`)
+    .then((response) => {
+      setLoading(false);
+
+      console.log(response.data);
+
+      if(response.data.exist === undefined) {
+        setResponseStatus('success');
+      }
+      else if(response.data.exist === false) {
+        setResponseStatus('not found');
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      setLoading(false);
+      setResponseStatus('error');
+    });
+  };
 
   return (
     <div className="track-shipment">
@@ -25,17 +54,6 @@ function TrackYourShipment() {
 
       <section className="search-input">
         <Container>
-
-        <div style={{
-            textAlign: "center",
-            fontSize: "22px",
-            fontWeight: "bold",
-            marginBottom: "2rem",
-            padding: "0.5rem",
-            color: "#856404",
-            backgroundColor: "#fff3cd"
-          }}>Website is under maintainance. In the meantime, you can send us all your queires at sales@innovantage.in, contact@innovantage.in</div>
-
           <Row>
             <Col xl={6} lg={6} md={12} sm={12} className="col">
               <InputField
@@ -48,11 +66,21 @@ function TrackYourShipment() {
             </Col>
 
             <Col xl={6} lg={6} md={12} sm={12}>
-              <Button type="submit" className="btn">Search <i className="fas fa-search"></i> </Button>
+              <Button type="submit" className="btn" onClick={handleSubmit}>Search <i className="fas fa-search"></i> </Button>
             </Col>
           </Row>
 
-          <ResultNotFound />
+          {loading && <div style={{ marginTop: "3rem", position: "relative", left: "-4rem" }}><Spinner animation="border" variant="primary" /></div>}
+
+          {responseStatus === 'not found' && <ResultNotFound />}
+
+          {responseStatus === 'error' && <ErrorInFetching />}
+
+          {responseStatus === 'success' && (
+            <div>
+
+            </div>
+          )}
         </Container>
       </section>
     </div>
