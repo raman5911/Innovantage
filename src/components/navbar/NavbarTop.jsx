@@ -48,7 +48,7 @@ function NavbarTop() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="dropdown-btn">
-                <Dropdown.Item href="/">Login as Admin</Dropdown.Item>
+                <Dropdown.Item href={`${process.env.REACT_APP_ADMIN_PORTAL_URL}`}>Login as Admin</Dropdown.Item>
                 <Dropdown.Item href="/">Login as Client</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
